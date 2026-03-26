@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Rondom Color Generator</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<style>
+  body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    transition: 1s;
+  }
+  .box{
+    width: 350px;
+    height: 150px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  #color-code{
+    font-size: 30px;
+    text-align: center;
+  }
+  #btn{
+    display: block;
+    width: 100%;
+    height: 40px;
+    border: none;
+    font-size: 30px;
+    border-radius: 10px;
+  }
+</style>
+<body>
+    <div class="box">
+        <h3 id="color-code">#44ff5f</h3>
+        <button id="btn">Click Me</button>
+    </div>
+</body>
+<script>
+    const color_code = document.getElementById("color-code");
+    let btn = document.getElementById("btn");
 
+    btn.addEventListener("click", () => {
+        const randomnumber = Math.floor(Math.random() * 16777215);
+        const randomCode = "#" + randomnumber.toString(16);
+        document.body.style.background = randomCode
+        color_code.innerText = randomCode
+    })
+</script>
+</html>
